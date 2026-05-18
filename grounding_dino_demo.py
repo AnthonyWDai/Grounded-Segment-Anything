@@ -1,9 +1,11 @@
+import os
+
 from groundingdino.util.inference import load_model, load_image, predict, annotate, Model
 import cv2
 
 
 CONFIG_PATH = "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
-CHECKPOINT_PATH = "./groundingdino_swint_ogc.pth"
+CHECKPOINT_PATH = "%s/gsam/groundingdino_swint_ogc.pth" % os.environ["savemodel"]
 DEVICE = "cuda"
 IMAGE_PATH = "assets/demo7.jpg"
 TEXT_PROMPT = "Horse. Clouds. Grasses. Sky. Hill."
